@@ -1,0 +1,98 @@
+#include<stdio.h>
+#include<conio.h>
+#define SIZE 5
+int top=-1,stack[SIZE];
+int pop();
+void push(int);
+int isFull();
+int isEmpty();
+void main()
+{
+ int n,a,i;
+ clrscr();
+ while(1)
+ {
+ printf("\n1. Push\n2. Pop\n3. Display\n4. Exit\n Enter a no. :");
+ scanf("%d",&n);
+
+  switch(n)
+  {
+    case 1:
+	  printf("\nEnter the number : ");
+	  scanf("%d",&a);
+	  push(a);
+	 // printf("\n%d inserted in the stack sucessfully",a);
+	  break ;
+    case 2:
+	  pop();
+       //	  printf("\ntop element poped successfully");
+	  break ;
+
+    case 3:
+	  printf("Stack :");
+	  for(i=0;i<=top;i++)
+	  {
+	  printf(" %d",stack[i]);
+	  }
+	  break ;
+
+    case 4:
+	  exit(0);
+    default :
+	  printf("Wrong entry");
+  }
+ }
+// getch();
+}
+//Push operation
+void push(int a1)
+{
+ if(isFull())
+ {
+ printf("\nStack is full");
+
+ }
+ else
+ {
+ top++;
+ stack[top]=a1;
+ }
+ return top;
+}
+//Stack Overflow check
+int isFull()
+{
+ if(top==SIZE-1)
+ {
+ return 1;
+ }
+ else
+ {
+ return 0;
+ }
+}
+//Pop operation
+int pop()
+{
+ if(isEmpty())
+ {
+   printf("Stack is empty");
+ }
+ else
+ {
+     top--;
+     return top;
+ }
+}
+//Stack empty check
+int isEmpty()
+{
+  if(top==-1)
+  {
+   return 1;
+  }
+  else
+  {
+  return 0;
+  }
+}
