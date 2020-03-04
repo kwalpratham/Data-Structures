@@ -1,11 +1,14 @@
 #include<stdio.h>
 #include<conio.h>
 #define SIZE 5
+
 int top=-1,stack[SIZE];
+
 int pop();
 void push(int);
 int isFull();
 int isEmpty();
+
 void main()
 {
  int n,a,i;
@@ -25,7 +28,7 @@ void main()
 	  break ;
     case 2:
 	  pop();
-       //	  printf("\ntop element poped successfully");
+          printf("\nTop element poped successfully");
 	  break ;
 
     case 3:
